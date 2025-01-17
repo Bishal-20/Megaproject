@@ -1,0 +1,64 @@
+<%layout("/layouts/boilerplate") %>
+<style>
+    select[multiple] {
+    padding: 10px;
+    border-radius: 4px;
+}
+
+select[multiple] option {
+    padding: 5px;
+    margin: 2px 0;
+    border-radius: 2px;
+}
+
+select[multiple] option:checked {
+    background-color: #212529;
+    color: white;
+}
+</style>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2">
+          </br> </br>
+            <h3>Create a new listing</h3>
+    
+         <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+           <div class="mb-3">
+               <label for="title" class="form-label">Title</label>
+               <input name="listing[title]" placeholder="Add a Catchy Title" type="text" class="form-control" required>
+               <div class="invalid-feedback">
+                Please enter a title.</div>
+            </div>
+            <div class="mb-3">
+               <label for="description" class="form-label">Description</label>
+               <textarea name="listing[description]"  type="text" class="form-control" required></textarea>
+                <div class="invalid-feedback">
+                Please enter a short description.</div>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Upload listing image</label>
+                <input name="listing[image]" type="file" class="form-control" required>
+             </div>
+            <div class="row">
+                <div class="mb-3 col-md-4">
+                    <label for="price" class="form-label">Price</label>
+                    <input name="listing[price]" placeholder="1200" type="number" class="form-control" required>
+                    <div class="invalid-feedback">Please enter a price.</div>
+                </div>
+          
+                <div class="mb-3 col-md-8" >
+                    <label for="location" class="form-label">Location</label>
+                    <input name="listing[location]" placeholder="Guwahati,Assam" type="text" class="form-control" required>
+                    <div class="invalid-feedback">Please enter a location.</div>
+                </div>
+            </div>
+            <div class="mb-3">
+               <label for="country" class="form-label">Country</label>
+               <input name="listing[country]" placeholder="India" type="text" class="form-control" required>
+               <div class="invalid-feedback">Please enter a country.</div>
+            </div>
+            <button class="btn btn-dark add-btn">Add</button>
+        </div>   
+        </form>
+    </div>
+</body>

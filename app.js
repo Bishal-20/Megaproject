@@ -42,7 +42,7 @@ app.listen(8080,()=>{
 const store=MongoStore.create({
     mongoUrl:dbUrl,
     crypto:{
-        secret:"mysupersecretcode",
+        secret:process.env.SECRET,
     },
     touchAfter:24*3600,
 });
@@ -52,7 +52,7 @@ store.on("error",()=>{
 
 const sessionOptions={
     store,
-    secret:"mysupersecretcode",
+    secret:process.env.SECRET,
     resave:false,
     saveUninitialized:true,
     cookie:{
@@ -62,7 +62,7 @@ const sessionOptions={
     },
 };
 app.get("/",(req,res)=>{
-    res.send("Hello World");
+    res.send("/listings");
 });
 
 app.use(session(sessionOptions));

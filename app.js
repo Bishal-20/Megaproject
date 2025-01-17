@@ -62,7 +62,7 @@ const sessionOptions={
     },
 };
 app.get("/",(req,res)=>{
-    res.send("/listings");
+    res.redirect("/listings");
 });
 
 app.use(session(sessionOptions));

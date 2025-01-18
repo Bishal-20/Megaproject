@@ -6,7 +6,7 @@ const listingController=require("../controllers/listing.js");
 const multer  = require('multer');
 const {storage}=require("../cloudConfig.js");
 const upload = multer({storage});
-
+const Listing=require("../models/listing.js");
 // Search Route
 router.get('/search', wrapAsync(async (req, res) => {
     const { query } = req.query;
@@ -16,7 +16,7 @@ router.get('/search', wrapAsync(async (req, res) => {
             { country: new RegExp(query, 'i') }
         ]
     });
-    res.render('listings/index', { allListings: listings });
+    res.render('search', { allListings: listings, searchQuery: query  });
 }));
 
 //(Get all the listings)(Post a new listing)

@@ -96,7 +96,7 @@ app.all("*",(req,res,next)=>{
 });
 
 app.use((err,req,res,next)=>{
-    let{message="Something went wrong!",statusCode="500"}=err;
+    let{message="Something went wrong!",statusCode=500}=err;
     res.status(statusCode).render("error.ejs",{message});
     res.status(statusCode).send(message);
 });

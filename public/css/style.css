@@ -155,3 +155,54 @@ body{
     height: 400px;
     width: 80vh;
 }
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        height: 4rem;
+    }
+
+    .f-support, .f-hosting, .f-airbnb {
+        flex: 1 0 100%;
+        text-align: center;
+        margin: 0.5rem 0;
+    }
+
+    .f-info {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .card-img-top, .show-img {
+        height: auto;
+    }
+
+    #map {
+        width: 100%;
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fa-compass {
+        font-size: 1.5rem;
+    }
+
+    .fa-heart {
+        font-size: 1.2rem;
+    }
+
+    .f-socialmedia i {
+        font-size: 1rem;
+        margin-right: 0.5rem;
+    }
+
+    .f-info {
+        padding: 0.5rem;
+    }
+
+    .add-btn {
+        font-size: 0.9rem;
+    }
+}

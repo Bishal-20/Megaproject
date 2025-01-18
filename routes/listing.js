@@ -7,6 +7,18 @@ const multer  = require('multer');
 const {storage}=require("../cloudConfig.js");
 const upload = multer({storage});
 
+// Search Route
+router.get('/search', wrapAsync(async (req, res) => {
+    const { query } = req.query;
+    const listings = await Listing.find({
+        $or: [
+            { location: new RegExp(query, 'i') },
+            { country: new RegExp(query, 'i') }
+        ]
+    });
+    res.render('listings/index', { allListings: listings });
+}));
+
 //(Get all the listings)(Post a new listing)
 router.route("/")
 .get(wrapAsync(listingController.index))

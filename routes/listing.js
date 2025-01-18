@@ -7,22 +7,10 @@ const multer  = require('multer');
 const {storage}=require("../cloudConfig.js");
 const upload = multer({storage});
 const Listing=require("../models/listing.js");
-// Search Route
-router.get('/search', wrapAsync(async (req, res) => {
-    const { query } = req.query;
-    if (!query) {
-        req.flash("error", "Please enter a search term!");
-        return res.redirect("/listings");
-    }
 
-    const listings = await Listing.find({
-        $or: [
-            { location: new RegExp(query, 'i') },
-            { country: new RegExp(query, 'i') }
-        ]
-    });
-    res.render('search', { allListings: listings, searchQuery: query  });
-}));
+
+// Search Route
+router.get("/search",wrapAsync(listingController.searchResult));
 
 //(Get all the listings)(Post a new listing)
 router.route("/")

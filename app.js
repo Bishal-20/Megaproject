@@ -86,6 +86,11 @@ app.use("/listings",listingRouter);
 app.use("/listings/:id/reviews",reviewRouter);
 app.use("/",userRouter);
 
+app.use((req, res, next) => {
+    res.locals.searchQuery = req.query.query || "";  // Ensure searchQuery is always defined
+    next();
+});
+
 app.all("*",(req,res,next)=>{
     next(new Expresserror("Page Not Found",404));
 });

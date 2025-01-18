@@ -5,7 +5,7 @@ const maptoken=process.env.MAP_TOKEN;
 const geocodingClient = mbxGeocoding({ accessToken: maptoken });
 
 
-module.exports.searchResult=wrapAsync(async (req, res) => {
+module.exports.searchResult=(async (req, res) => {
     const { query } = req.query;
     if (!query) {
         req.flash("error", "Please enter a search term!");

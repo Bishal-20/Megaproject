@@ -12,58 +12,47 @@
     padding: 0.5rem 3rem 0.5rem 3rem; 
   }
 
-/* Hide compass icon on small screens */
+
 @media (max-width: 768px) {
     .nav-link{
         display: none;
     }
 }
 
-/* Make collapsed navbar background solid */
 .navbar-collapse {
     background-color: white;
     padding: 1rem;
 }
 
-/* Ensure search bar stays centered */
 .navbar .search-container {
     flex-grow: 1;
     display: flex;
     justify-content: center;
 }
 
-/* Reduce width of search bar */
 .search-input {
     border-radius: 25px;
     padding: 0.5rem 1.5rem;
     width: 100%;
-    max-width: 350px; /* Prevents it from being too wide */
+    max-width: 350px; 
 }
 
-/* Search Button */
 .btn-search {
     border-radius: 25px;
     padding: 0.3rem 1rem;
 }
 
-/* Adjustments for Small Screens */
 @media (max-width: 768px) {
-    /* Adjust layout to keep "Explore" on the left and search bar centered */
     .navbar {
         flex-wrap: wrap;
         justify-content: space-between;
     }
-
-    /* Keep search bar centered */
     .search-container {
-        position: absolute;
         left: 50%;
         transform: translateX(-50%);
         width: 60%;
         max-width: 280px;
     }
-
-    /* Adjust search input size */
     .search-input {
         padding: 0.4rem 1rem;
     }
@@ -72,8 +61,6 @@
         padding: 0.3rem 0.8rem;
         font-size: 0.9rem;
     }
-
-    /* Collapse menu adjustments */
     .navbar-collapse {
         text-align:right;
         padding: 0.5rem;
@@ -88,7 +75,6 @@
     }
 }
 
-/* Further adjustments for very small screens */
 @media (max-width: 480px) {
     .search-container {
         width: 80%;

@@ -61,6 +61,12 @@ const sessionOptions={
         maxAge:1000*60*60*24*7
     },
 };
+
+app.use((req, res, next) => {
+    res.locals.searchQuery = req.query.query || "";  // Ensure searchQuery is always defined
+    next();
+});
+
 app.get("/",(req,res)=>{
     res.redirect("/listings");
 });
@@ -86,10 +92,7 @@ app.use("/listings",listingRouter);
 app.use("/listings/:id/reviews",reviewRouter);
 app.use("/",userRouter);
 
-app.use((req, res, next) => {
-    res.locals.searchQuery = req.query.query || "";  // Ensure searchQuery is always defined
-    next();
-});
+
 
 app.all("*",(req,res,next)=>{
     next(new Expresserror("Page Not Found",404));

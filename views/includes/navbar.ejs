@@ -11,6 +11,54 @@
     border-radius: 25px;
     padding: 0.5rem 3rem 0.5rem 3rem; 
   }
+  @media (max-width: 768px) {
+    .fa-compass {
+        display: none;
+    }
+
+    /* Make collapsed navbar background solid */
+    .navbar-collapse {
+        background-color: white;
+        padding: 1rem;
+        border-radius: 10px;
+    }
+
+    /* Adjust search bar for small screens */
+    .search-input {
+        padding: 0.5rem 1rem;
+    }
+
+    .btn-search {
+        padding: 0.3rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    /* Center align the navbar links */
+    .navbar-nav {
+        text-align: center;
+    }
+
+    /* Space out the links */
+    .navbar-nav .nav-link {
+        padding: 0.5rem 0;
+    }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+    .search-input {
+        width: 100%;
+    }
+
+    .btn-search {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    .navbar-collapse {
+        padding: 0.5rem;
+    }
+}
 </style>
 
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">

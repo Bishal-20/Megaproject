@@ -59,6 +59,10 @@
         padding: 0.4rem 1rem;
     }
 
+    .btn-search span {
+        display: none;
+    }
+
     .btn-search {
         padding: 0.3rem 0.8rem;
         font-size: 0.9rem;
@@ -104,7 +108,7 @@
       <div class=" search-container navbar-nav ms-auto">
         <form class="d-flex" role="search" action="/listings/search" method="GET">
           <input class="form-control me-2 search-input" type="search" name="query" placeholder="Search destinations" value="<%= searchQuery || '' %>">
-          <button class="btn btn-outline-danger btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+          <button class="btn btn-outline-danger btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i><span>Search</span>Search</button>
         </form>
       </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">

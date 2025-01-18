@@ -23,6 +23,10 @@ body{
     font-size: 2rem;
 }
 
+.nav-links{
+    color:#222222 !important;
+}
+
 .nav-link{
     color:#222222 !important;
 }

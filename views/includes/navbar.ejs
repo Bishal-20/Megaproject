@@ -11,30 +11,69 @@
     border-radius: 25px;
     padding: 0.5rem 3rem 0.5rem 3rem; 
   }
-  @media (max-width: 768px) {
-  
+ /* General Navbar Styling */
+.navbar {
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Hide compass icon on small screens */
+@media (max-width: 768px) {
     .fa-compass {
         display: none;
     }
+}
 
-   
-    .navbar-collapse {
-        background-color: white;
-        padding: 1rem;
-        border-radius: 10px;
+/* Make collapsed navbar background solid */
+.navbar-collapse {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+/* Ensure search bar stays centered */
+.navbar .search-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* Reduce width of search bar */
+.search-input {
+    border-radius: 25px;
+    padding: 0.5rem 1.5rem;
+    width: 100%;
+    max-width: 350px; /* Prevents it from being too wide */
+}
+
+/* Search Button */
+.btn-search {
+    border-radius: 25px;
+    padding: 0.3rem 1rem;
+}
+
+/* Adjustments for Small Screens */
+@media (max-width: 768px) {
+    /* Adjust layout to keep "Explore" on the left and search bar centered */
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
+
+    /* Keep search bar centered */
     .search-container {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        width: 70%;
-        max-width: 400px;
+        width: 60%;
+        max-width: 280px;
     }
 
-    
+    /* Adjust search input size */
     .search-input {
-        padding: 0.5rem 1rem;
-        width: 100%;
+        padding: 0.4rem 1rem;
     }
 
     .btn-search {
@@ -42,10 +81,10 @@
         font-size: 0.9rem;
     }
 
-   
-    .navbar-nav {
+    /* Collapse menu adjustments */
+    .navbar-collapse {
         text-align: center;
-        width: 100%;
+        padding: 0.5rem;
     }
 
     .navbar-nav .nav-link {
@@ -53,9 +92,11 @@
     }
 }
 
+/* Further adjustments for very small screens */
 @media (max-width: 480px) {
     .search-container {
-        width: 85%;
+        width: 80%;
+        max-width: 250px;
     }
 
     .search-input {
@@ -66,16 +107,16 @@
     .btn-search {
         font-size: 0.85rem;
     }
-
-    .navbar-collapse {
-        padding: 0.5rem;
-    }
 }
+
 </style>
 
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="/listings"><i class="fa-solid fa-compass"></i></a>
+      <div class="navbar-nav">
+        <a class="nav-link" href="/listings">Explore</a>
+      </div>
       <div class=" search-container navbar-nav ms-auto">
         <form class="d-flex" role="search" action="/listings/search" method="GET">
           <input class="form-control me-2 search-input" type="search" name="query" placeholder="Search destinations" value="<%= searchQuery || '' %>">
@@ -86,10 +127,6 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link" href="/listings">Explore</a>
-        </div>
-
         <div class="navbar-nav ms-auto">
           <a class="nav-link" href="/listings/new">Airbnb your home</a>
           <% if(!currentUser) { %>

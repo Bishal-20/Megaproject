@@ -44,6 +44,22 @@
       color:grey;
     }
 
+    #scroll-right {
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     background: rgba(0, 0, 0, 0.5);
+     color: white;
+     border: none;
+     cursor: pointer;
+     padding: 0.5rem;
+     font-size: 1.2rem;
+     z-index: 1000;
+    }
+    #scroll-right {
+      right: 0;
+    }
+
     @media (max-width: 480px) {
       .tax-toggle {
         display: none;
@@ -102,6 +118,9 @@
          <div><i class="fa-solid fa-tractor"></i></div>
          <p>Farms</p>
        </div>
+       <div class="filter">
+        <button id="scroll-right"><i class="fa-solid fa-arrow-right"></i></button>
+       </div>
        <div class="tax-toggle">
         <div class="form-check-reverse form-switch">
           <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
@@ -143,6 +162,9 @@
           info.style.display = "none";
         }
       }
+    });
+    document.getElementById("scroll-right").addEventListener("click", () => {
+       filterContainer.scrollBy({ left: 200, behavior: "smooth" });
     });
   </script>
 </body>  

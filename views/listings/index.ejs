@@ -46,9 +46,9 @@
     }
 
     #scroll-button {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgb(255, 255, 255);
   color: white;
-  border: none;
+  border: 1px solid white;
   cursor: pointer;
   padding: 0.5rem;
   font-size: 1.2rem;
@@ -171,39 +171,22 @@
       <% } %>
   </div>
   <script>
-    // let taxswitch = document.getElementById("flexSwitchCheckDefault");
-    // taxswitch.addEventListener("click", () => {
-    // let taxinfo = document.getElementsByClassName("tax-info");
-    //   for(info of taxinfo){
-    //     if(info.style.display!="inline"){
-    //       info.style.display = "inline";
-    //     }else{
-    //       info.style.display = "none";
-    //     }
-    //   }
-    // });
     let taxswitch = document.getElementById("flexSwitchCheckDefault");
-
-// Function to toggle GST display
-const updateGSTDisplay = () => {
-  let taxinfo = document.getElementsByClassName("tax-info");
-  for (let info of taxinfo) {
-    if (taxswitch.checked) {
-      info.style.display = "inline";
-    } else {
-      info.style.display = "none";
+    const updateGSTDisplay = () => {
+    let taxinfo = document.getElementsByClassName("tax-info");
+    for (let info of taxinfo) {
+      if (taxswitch.checked) {
+       info.style.display = "inline";
+      } else {
+        info.style.display = "none";
+      }
     }
-  }
-};
-
-// Add event listener for toggle button
-taxswitch.addEventListener("click", updateGSTDisplay);
-
-// Initialize GST display on page load
-window.addEventListener("load", () => {
-  taxswitch.checked = false; // Set default state of the toggle
-  updateGSTDisplay();
-});
+   };
+    taxswitch.addEventListener("click", updateGSTDisplay);
+    window.addEventListener("load", () => {
+    taxswitch.checked = false;
+    updateGSTDisplay();
+    });
 
     const filterContainer=document.getElementById("filters");
     document.getElementById("scroll-left").addEventListener("click", () => {

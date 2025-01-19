@@ -44,7 +44,7 @@
       color:grey;
     }
 
-    #scroll-right {
+    #scroll-button {
   background: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
@@ -58,12 +58,9 @@
   justify-content: center;
   border-radius: 50%;
   transition: 0.3s;
-  
-  /** This pushes the button to the right, placing it before tax-toggle */
-  margin-left: auto;
 }
 
-#scroll-right:hover {
+#scroll-button:hover {
   background: rgba(0, 0, 0, 0.7);
 }
 
@@ -86,6 +83,7 @@
   </style>
   <div class="filter-container">
     <div id="filters">
+      <button id="scroll-left" class="scroll-button">◀</button>
       <div class="filter">
          <div><i class="fa-solid fa-fire"></i></div>
          <p>Trending</p>
@@ -127,7 +125,7 @@
          <p>Farms</p>
        </div>
        <div class="filter">
-        <button id="scroll-right">▶</button>
+        <button id="scroll-right" class="scroll-button">▶</button>
        </div>
        <div class="tax-toggle">
         <div class="form-check-reverse form-switch">
@@ -172,6 +170,9 @@
       }
     });
     const filterContainer=document.getElementById("filters");
+    document.getElementById("scroll-left").addEventListener("click", () => {
+      filterContainer.scrollBy({ left: -200, behavior: "smooth" });
+    });
     document.getElementById("scroll-right").addEventListener("click", () => {
        filterContainer.scrollBy({ left: 200, behavior: "smooth" });
     });

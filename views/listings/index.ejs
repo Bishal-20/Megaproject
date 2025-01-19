@@ -10,7 +10,8 @@
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       white-space: nowrap;
-      padding-bottom: 0.5rem;
+      padding: 0.5rem;
+      width: 100%;
     }
 
     #filters {
@@ -18,13 +19,16 @@
       flex-wrap: nowrap;
       align-items: center;
       gap: 1rem;
+      padding: 0 1rem;
+      overflow-x: auto;
+      scroll-behavior: smooth;
     }
     .filter{
       text-align:center;
-      margin-right: 2rem;
-      margin-top: 2rem;
+      /* margin-right: 2rem;
+      margin-top: 2rem; */
       opacity:0.7;
-      overflow-x: auto;
+      flex: 0 0 auto;
     }
     .filter:hover{
       opacity:1;
@@ -35,7 +39,6 @@
     }
     .tax-info{
       color:grey;
-      display: none;
     }
 
     @media (max-width: 768px) {

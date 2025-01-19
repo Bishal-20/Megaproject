@@ -33,7 +33,9 @@
     padding: 10px 15px;
     font-size: 14px;
     text-align: center;
-     white-space: nowrap;
+    white-space: nowrap;
+    height: 37px;
+    line-height: 26px;
   }
 
   #map {
@@ -85,7 +87,7 @@
         
         <% if(currentUser && currentUser._id.equals(listing.owner._id)){%>   
           <div class="btns">
-            <a href="/listings/<%=listing._id%>/edit"class="btn btn-dark col-1 offset-3 add-btn" style="height: 37px; line-height: 26px">Edit</a>
+            <a href="/listings/<%=listing._id%>/edit"class="btn btn-dark col-1 offset-3 add-btn">Edit</a>
             </br> </br>
             <form action="/listings/<%=listing._id%>?_method=DELETE" method="POST">
                <button class="btn btn-dark offset-4" >Delete</button>

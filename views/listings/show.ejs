@@ -1,5 +1,65 @@
 <%layout("/layouts/boilerplate") %>
 <body>
+    <style>
+        /* General styling for smaller devices */
+       @media (max-width: 768px) {
+        .row {
+        flex-direction: column;
+        align-items: center;
+        }
+
+        .col-8,
+        .col-6,
+        .col-3 {
+        width: 90%;
+        margin: 0 auto;
+        }
+
+       .offset-3 {
+        margin-left: 0;
+      }
+
+        .btns {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+
+       .btn {
+        width: 80%;
+        margin-bottom: 10px;
+        }
+
+       .add-btn {
+        margin-top: 10px;
+        }
+
+        #map {
+        height: 300px; /* Adjust map size for smaller screens */
+        }
+    }
+
+    /* Styling for very small devices */
+    @media (max-width: 480px) {
+       .card {
+        width: 100%;
+        margin: 10px 0;
+        }
+
+       .card-img-top {
+        height: auto;
+        }
+   
+       h3, h4 {
+       text-align: center;
+       font-size: 1.2rem;
+       }
+
+      .starability-heart label {
+      font-size: 0.8rem;
+      } 
+    }
+    </style>
     <script>
         const maptoken='<%=process.env.MAP_TOKEN%>';
         const listing=<%- JSON.stringify(listing)%>;

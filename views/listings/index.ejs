@@ -44,44 +44,6 @@
     .tax-info{
       color:grey;
     }
-
-    #scroll-button {
-  background-color: white;
-  color: white;
-  border: 1px solid white;
-  cursor: pointer;
-  padding: 0.5rem;
-  font-size: 1.2rem;
-  height: 2.5rem;
-  width: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: 0.3s;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-}
-#scroll-left {
-  left: 10px;
-}
-
-#scroll-right {
-  right: 10px;
-}
-
-#scroll-button:hover {
-  background: rgba(0, 0, 0, 0.7);
-}
-
-
-    @media (max-width: 480px) {
-      .tax-toggle {
-        display: none;
-      }
-    }
     .tax-toggle{
       border:1px solid black;
       border-radius: 1rem;
@@ -92,7 +54,42 @@
       align-items: center;
       
     }
-  </style>
+
+    #scroll-button {
+    background-color: white;
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.3s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+#scroll-left {
+  left: 10px;
+}
+
+#scroll-right {
+  right: 10px;
+}
+
+
+@media (max-width: 480px) {
+  .tax-toggle {
+     display: none;
+    }
+}
+  
+</style>
   <div class="filter-container">
     
     <div id="filters">
@@ -137,8 +134,8 @@
          <div><i class="fa-solid fa-tractor"></i></div>
          <p>Farms</p>
        </div>
-       <button id="scroll-left" class="scroll-button"><i class="fa-solid fa-circle-chevron-left"></i></button>
-        <button id="scroll-right" class="scroll-button"><i class="fa-solid fa-circle-chevron-right"></i></button>
+        <span id="scroll-left" class="scroll-button"><i class="fa-solid fa-circle-chevron-left"></i></span>
+        <span id="scroll-right" class="scroll-button"><i class="fa-solid fa-circle-chevron-right"></i></span>
 
        <div class="tax-toggle">
         <div class="form-check-reverse form-switch">

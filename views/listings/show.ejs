@@ -1,6 +1,10 @@
 <%layout("/layouts/boilerplate") %>
 <body>
 <style>
+    .edit{
+        height: 37px;
+        line-height: 26px;
+    }
 /* General styling for smaller devices */
 @media (max-width: 768px) {
   .row {
@@ -35,7 +39,7 @@
     text-align: center;
     white-space: nowrap;
     height: 37px;
-    line-height: 26px;
+    line-height: 15px;
   }
 
   #map {
@@ -87,7 +91,7 @@
         
         <% if(currentUser && currentUser._id.equals(listing.owner._id)){%>   
           <div class="btns">
-            <a href="/listings/<%=listing._id%>/edit"class="btn btn-dark col-1 offset-3 add-btn">Edit</a>
+            <a href="/listings/<%=listing._id%>/edit"class="btn btn-dark col-1 offset-3 add-btn edit">Edit</a>
             </br> </br>
             <form action="/listings/<%=listing._id%>?_method=DELETE" method="POST">
                <button class="btn btn-dark offset-4" >Delete</button>

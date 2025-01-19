@@ -1,5 +1,5 @@
 <%layout("/layouts/boilerplate") %>
-<body>
+
   <style>
      body {
       overflow-x: hidden;
@@ -137,8 +137,8 @@
          <div><i class="fa-solid fa-tractor"></i></div>
          <p>Farms</p>
        </div>
-       <button id="scroll-left" class="scroll-button">◀</button>
-        <button id="scroll-right" class="scroll-button">▶</button>
+       <button id="scroll-left" class="scroll-button"><i class="fa-solid fa-circle-chevron-left"></i></button>
+        <button id="scroll-right" class="scroll-button"><i class="fa-solid fa-circle-chevron-right"></i></button>
 
        <div class="tax-toggle">
         <div class="form-check-reverse form-switch">
@@ -171,17 +171,40 @@
       <% } %>
   </div>
   <script>
+    // let taxswitch = document.getElementById("flexSwitchCheckDefault");
+    // taxswitch.addEventListener("click", () => {
+    // let taxinfo = document.getElementsByClassName("tax-info");
+    //   for(info of taxinfo){
+    //     if(info.style.display!="inline"){
+    //       info.style.display = "inline";
+    //     }else{
+    //       info.style.display = "none";
+    //     }
+    //   }
+    // });
     let taxswitch = document.getElementById("flexSwitchCheckDefault");
-    taxswitch.addEventListener("click", () => {
-    let taxinfo = document.getElementsByClassName("tax-info");
-      for(info of taxinfo){
-        if(info.style.display!="inline"){
-          info.style.display = "inline";
-        }else{
-          info.style.display = "none";
-        }
-      }
-    });
+
+// Function to toggle GST display
+const updateGSTDisplay = () => {
+  let taxinfo = document.getElementsByClassName("tax-info");
+  for (let info of taxinfo) {
+    if (taxswitch.checked) {
+      info.style.display = "inline";
+    } else {
+      info.style.display = "none";
+    }
+  }
+};
+
+// Add event listener for toggle button
+taxswitch.addEventListener("click", updateGSTDisplay);
+
+// Initialize GST display on page load
+window.addEventListener("load", () => {
+  taxswitch.checked = false; // Set default state of the toggle
+  updateGSTDisplay();
+});
+
     const filterContainer=document.getElementById("filters");
     document.getElementById("scroll-left").addEventListener("click", () => {
       filterContainer.scrollBy({ left: -200, behavior: "smooth" });
@@ -190,4 +213,3 @@
        filterContainer.scrollBy({ left: 200, behavior: "smooth" });
     });
   </script>
-</body>  

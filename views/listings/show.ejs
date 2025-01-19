@@ -1,73 +1,72 @@
 <%layout("/layouts/boilerplate") %>
-<body>
 <style>
     .edit{
         height: 37px;
         line-height: 26px;
     }
-/* General styling for smaller devices */
-@media (max-width: 768px) {
-  .row {
-    flex-direction: column;
-    align-items: center;
-  }
 
-  .col-8,
-  .col-6,
-  .col-3 {
-    width: 90%;
-    margin: 0 auto;
-  }
+   @media (max-width: 768px) {
+       .row {
+        flex-direction: column;
+        align-items: center;
+        }
 
-  .offset-3 {
-    margin-left: 0;
-  }
+       .col-8,
+       .col-6,
+       .col-3 {
+       width: 90%;
+       margin: 0 auto;
+       }
 
-  .btns {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap:10px;
-  }
+      .offset-3 {
+      margin-left: 0;
+      }
 
-  .btn {
-    width: auto;
-    min-width: 100px;
-    padding: 10px 15px;
-    font-size: 14px;
-    text-align: center;
-    white-space: nowrap;
-    height: 37px;
-    line-height: 15px;
-  }
+      .btns {
+       display: flex;
+       flex-direction: row;
+       align-items: center;
+       justify-content: center;
+       gap:10px;
+      }
 
-  #map {
-    height: 300px;
-    width: 100%; /* Adjust map size for smaller screens */
-  }
-}
+      .btn {
+       width: auto;
+       min-width: 100px;
+       padding: 10px 15px;
+       font-size: 14px;
+       text-align: center;
+       white-space: nowrap;
+       height: 37px;
+       line-height: 15px;
+       }
 
-/* Styling for very small devices */
-@media (max-width: 480px) {
-  .card {
-    width: 100%;
-    margin: 10px 0;
-  }
+      #map {
+       height: 300px;
+       width: 100%;
+       }
+    }
 
-  .card-img-top {
-    height: auto;
-  }
 
-  h3, h4 {
-    text-align: center;
-    font-size: 1.2rem;
-  }
+    @media (max-width: 480px) {
+      .card {
+       width: 100%;
+       margin: 10px 0;
+      }
 
-  .starability-heart label {
-    font-size: 0.8rem;
-  }
-}
+      .card-img-top {
+      height: auto;
+      }
+
+      h3, h4 {
+      text-align: center;
+      font-size: 1.2rem;
+      }
+
+      .starability-heart label {
+      font-size: 0.8rem;
+      }
+    }
 </style>
     
     <script>
@@ -160,4 +159,4 @@
         </div>
     </div> 
     <script src="/js/map.js"></script>
-</body>
+

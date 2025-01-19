@@ -1,7 +1,6 @@
 <%layout("/layouts/boilerplate") %>
 <body>
     <style>
-        /* General styling for smaller devices */
        @media (max-width: 768px) {
         .row {
         flex-direction: column;
@@ -21,25 +20,19 @@
 
         .btns {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         }
 
        .btn {
-        width: 80%;
+        width: 20%;
         margin-bottom: 10px;
         }
 
-       .add-btn {
-        margin-top: 10px;
-        }
-
         #map {
-        height: 300px; /* Adjust map size for smaller screens */
+        height: 300px;
         }
     }
-
-    /* Styling for very small devices */
     @media (max-width: 480px) {
        .card {
         width: 100%;
@@ -120,11 +113,11 @@
                 <button class="btn btn-outline-dark">Submit</button>
               
              </form>
-             <hr />
+             
             <%}%> 
             
         </div>
-
+        <hr />
         <%if(listing.reviews.length>0){%>
         <div class="row">
             <h4 class="col-6 offset-3">All Reviews</h4>

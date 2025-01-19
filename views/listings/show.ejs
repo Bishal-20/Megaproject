@@ -1,58 +1,88 @@
 <%layout("/layouts/boilerplate") %>
 <body>
-    <style>
-       @media (max-width: 768px) {
+<style>
+
+    @media (max-width: 768px) {
         .row {
-        flex-direction: column;
-        align-items: center;
+            flex-direction: column;
+            align-items: center;
         }
 
         .col-8,
         .col-6,
         .col-3 {
-        width: 90%;
-        margin: 0 auto;
+            width: 90%;
+            margin: 0 auto;
         }
 
-       .offset-3 {
-        margin-left: 0;
-      }
+        .offset-3 {
+            margin-left: 0;
+        }
 
         .btns {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 10px; /* Adds spacing between buttons */
         }
 
-       .btn {
-        width: 20%;
-        margin-bottom: 10px;
+        .btn {
+            width: auto;
+            min-width: 100px; /* Ensures the button does not shrink too much */
+            padding: 10px 15px;
+            font-size: 14px; /* Reduces font size to fit properly */
+            text-align: center;
+            white-space: nowrap; /* Prevents text from breaking into multiple lines */
         }
 
         #map {
-        height: 300px;
+            height: 300px;
+            width: 100%;
+            margin: 0 auto;
         }
     }
+
     @media (max-width: 480px) {
-       .card {
-        width: 100%;
-        margin: 10px 0;
+        .card {
+            width: 100%;
+            margin: 10px 0;
         }
 
-       .card-img-top {
-        height: auto;
+        .card-img-top {
+            height: auto;
         }
-   
-       h3, h4 {
-       text-align: center;
-       font-size: 1.2rem;
-       }
 
-      .starability-heart label {
-      font-size: 0.8rem;
-      } 
+        h3, h4 {
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .starability-heart label {
+            font-size: 0.8rem;
+        }
+
+        /* Fixes for Delete and Submit buttons */
+        button {
+            width: 100%; /* Ensures full width for better visibility */
+            min-width: 120px;
+            padding: 8px 12px;
+            font-size: 14px;
+            text-align: center;
+            white-space: nowrap; /* Ensures text stays in one line */
+        }
+
+        /* Prevents Delete button text from breaking into multiple lines */
+        .btn-sm {
+            width: auto;
+            min-width: 100px;
+            padding: 5px 10px;
+            font-size: 12px;
+            text-align: center;
+        }
     }
-    </style>
+</style>
+
     <script>
         const maptoken='<%=process.env.MAP_TOKEN%>';
         const listing=<%- JSON.stringify(listing)%>;

@@ -1,10 +1,18 @@
 <%layout("/layouts/boilerplate") %>
 <body>
   <style>
-    #filters{
+    .filter-container {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      white-space: nowrap;
+      padding-bottom: 0.5rem;
+    }
+
+    #filters {
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       align-items: center;
+      gap: 1rem;
     }
     .filter{
       text-align:center;
@@ -23,6 +31,12 @@
     .tax-info{
       color:grey;
       display: none;
+    }
+
+    @media (max-width: 768px) {
+      .tax-info {
+        display: none;
+      }
     }
     .tax-toggle{
       border:1px solid black;

@@ -188,8 +188,28 @@
     const scrollRightBtn = document.getElementById("scroll-right");
 
     const toggleScrollButtons = () => {
+    const screenWidth = window.innerWidth;
+
+    if (screenWidth <= 480) {
+    scrollLeftBtn.style.display = "none";
+    scrollRightBtn.style.display = "none";
+    return;
+  }
+
+    const toggleScrollButtons = () => {
     const scrollLeft = filterContainer.scrollLeft;
     const maxScroll = filterContainer.scrollWidth - filterContainer.clientWidth;
+    if (scrollLeft > 0) {
+    scrollLeftBtn.style.display = "flex";
+  } else {
+    scrollLeftBtn.style.display = "none";
+  }
+  if (scrollLeft < maxScroll) {
+    scrollRightBtn.style.display = "flex";
+  } else {
+    scrollRightBtn.style.display = "none";
+  }
+};
     scrollLeftBtn.style.display = scrollLeft > 0 ? "flex" : "none";
     scrollRightBtn.style.display = scrollLeft < maxScroll ? "flex" : "none";
 };

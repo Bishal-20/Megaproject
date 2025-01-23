@@ -183,11 +183,25 @@
     updateGSTDisplay();
     });
 
-    const filterContainer=document.getElementById("filters");
-    document.getElementById("scroll-left").addEventListener("click", () => {
-      filterContainer.scrollBy({ left: -200, behavior: "smooth" });
-    });
-    document.getElementById("scroll-right").addEventListener("click", () => {
-       filterContainer.scrollBy({ left: 200, behavior: "smooth" });
-    });
+    const filterContainer = document.getElementById("filters");
+    const scrollLeftBtn = document.getElementById("scroll-left");
+    const scrollRightBtn = document.getElementById("scroll-right");
+
+    const toggleScrollButtons = () => {
+    const scrollLeft = filterContainer.scrollLeft;
+    const maxScroll = filterContainer.scrollWidth - filterContainer.clientWidth;
+    scrollLeftBtn.style.display = scrollLeft > 0 ? "flex" : "none";
+    scrollRightBtn.style.display = scrollLeft < maxScroll ? "flex" : "none";
+};
+    filterContainer.addEventListener("scroll", toggleScrollButtons);
+    window.addEventListener("load", toggleScrollButtons);
+
+    scrollLeftBtn.addEventListener("click", () => {
+    filterContainer.scrollBy({ left: -200, behavior: "smooth" });
+   });
+
+    scrollRightBtn.addEventListener("click", () => {
+    filterContainer.scrollBy({ left: 200, behavior: "smooth" });
+   });
+
   </script>

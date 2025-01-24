@@ -1,4 +1,4 @@
-<style>
+<!-- <style>
   .btn-search i{
     display: inline;
     margin-right:0.5rem;
@@ -7,7 +7,7 @@
     border-radius: 25px;
     padding: 0 1rem 0 1rem;
   }
-  .navbar .element{
+  .navbar .search-container{
     flex-grow: 1;
     display: flex;
     justify-content: center;
@@ -117,7 +117,111 @@
     }
 }
 
+</style> -->
+<style>
+  .btn-search i {
+    display: inline;
+    margin-right: 0.5rem;
+  }
+
+  .btn-search {
+    border-radius: 25px;
+    padding: 0 1rem;
+  }
+
+  .navbar {
+    display: flex;
+    align-items: center; /* Align all items vertically */
+  }
+
+  .navbar .search-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    margin: 0 auto; /* Ensures it's centered in its container */
+  }
+
+  .search-input {
+    border-radius: 25px;
+    padding: 0.5rem 1.5rem; /* Adjusted padding for balance */
+    width: 100%;
+    max-width: 350px; /* Prevents the input from becoming too wide */
+  }
+
+  .navbar .navbar-nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem; /* Adds spacing between nav items */
+    align-items: center;
+  }
+
+  .navbar-nav .nav-link {
+    margin: 0;
+  }
+
+  .btn-search {
+    border-radius: 25px;
+    padding: 0.3rem 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .navbar {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .search-container {
+      position: relative; /* No need for absolute positioning */
+      width: auto;
+      margin: 0 auto;
+    }
+
+    .search-input {
+      padding: 0.4rem 1rem;
+    }
+
+    .btn-search span {
+      display: none;
+    }
+
+    .btn-search {
+      padding: 0.3rem 0.8rem;
+      font-size: 1rem;
+      border: none;
+    }
+
+    .navbar-collapse {
+      text-align: right;
+      padding: 0.5rem;
+    }
+
+    .navbar-nav .nav-links {
+      padding: 0.5rem 0;
+    }
+
+    .navbar-nav .nav-link {
+      padding: 0.5rem 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .search-container {
+      width: 50%;
+      max-width: 250px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 0.4rem 1rem;
+    }
+
+    .btn-search {
+      font-size: 1rem;
+    }
+  }
 </style>
+
 
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
     <div class="container-fluid">
@@ -125,7 +229,7 @@
       <div class="navbar-nav">
         <a class="nav-link" href="/listings">Explore</a>
       </div>
-      <div class="search-container navbar-nav element">
+      <div class="search-container navbar-nav ms-auto">
         <form class="d-flex" role="search" action="/listings/search" method="GET">
           <input class="form-control me-2 search-input" type="search" name="query" placeholder="Search destinations" value="<%= searchQuery || '' %>">
           <button class="btn btn-outline-danger btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i><span>Search</span></button>

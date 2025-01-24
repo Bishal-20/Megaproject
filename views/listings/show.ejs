@@ -30,7 +30,7 @@
        gap:10px;
       }
 
-      .btn {
+      .butn {
        width: auto;
        min-width: 100px;
        padding: 10px 15px;
@@ -90,10 +90,10 @@
         
         <% if(currentUser && currentUser._id.equals(listing.owner._id)){%>   
           <div class="btns">
-            <a href="/listings/<%=listing._id%>/edit"class="btn btn-dark col-1 offset-3 add-btn edit">Edit</a>
+            <a href="/listings/<%=listing._id%>/edit"class="btn btn-dark col-1 offset-3 add-btn edit butn">Edit</a>
             </br> </br>
             <form action="/listings/<%=listing._id%>?_method=DELETE" method="POST">
-               <button class="btn btn-dark offset-4" >Delete</button>
+               <button class="btn btn-dark offset-4 butn" >Delete</button>
             </form>  
           </div>
         <%}%>  
@@ -126,7 +126,7 @@
                     <textarea id="comment" name="review[comment]" cols="30" rows="5" class="form-control" required></textarea>
                     <div class="invalid-feedback">Please add some comments for review</div>
                 </div>
-                <button class="btn btn-outline-dark">Submit</button>
+                <button class="btn btn-outline-dark butn">Submit</button>
               
              </form>
              
@@ -147,7 +147,7 @@
                         </p>
                     </div>  
                     <form  action="/listings/<%=listing._id%>/reviews/<%=review._id%>?_method=DELETE" method="POST">
-                        <button class="btn btn-sm btn-outline-dark mb-3 mt-3">Delete</button>
+                        <button class="btn btn-sm btn-outline-dark mb-3 mt-3 butn">Delete</button>
                     </form>  
                 </div>
             <%}%>

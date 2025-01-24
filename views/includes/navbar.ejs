@@ -11,12 +11,20 @@
     border-radius: 25px;
     padding: 0.5rem 3rem 0.5rem 3rem; 
   }
-  .navbar .nav-links {
+  .navbar .navbar-nav {
     display: flex;
     justify-content: flex-end;
     gap: 1rem; 
     align-items: center;
   }
+  .navbar-nav .nav-link {
+    margin: 0;
+  }
+  .search-input {
+    width: 100%; 
+    max-width: 350px;
+  }
+
 
 
 @media (max-width: 768px) {
@@ -32,8 +40,10 @@
 
 .navbar .search-container {
     flex-grow: 1;
+    flex-basis: auto;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .search-input {
@@ -54,12 +64,9 @@
         justify-content: space-between;
     }
     .search-container {
-        position:fixed;
-        /* left: 50%; */
-        transform: translateX(-50%);
-        width: 60%;
-        max-width: 280px;
-        top:1rem;
+      position: relative; 
+      width: auto;
+      margin: 0 auto;
     }
     .search-input {
         padding: 0.4rem 1rem;

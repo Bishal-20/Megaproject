@@ -209,9 +209,7 @@
   } else {
     scrollRightBtn.style.display = "none";
   }
-};
-    scrollLeftBtn.style.display = scrollLeft > 0 ? "flex" : "none";
-    scrollRightBtn.style.display = scrollLeft < maxScroll ? "flex" : "none";
+  };
 };
     filterContainer.addEventListener("scroll", toggleScrollButtons);
     window.addEventListener("load", toggleScrollButtons);
